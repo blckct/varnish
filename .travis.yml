@@ -3,12 +3,12 @@ sudo: required
 language: php
 
 install:
-  - apt-get update
-  - apt-get install apt-transport-https
+  - sudo apt-get update
+  - sudo apt-get install apt-transport-https
   - curl https://repo.varnish-cache.org/GPG-key.txt | sudo apt-key add -
   - echo "deb https://repo.varnish-cache.org/debian/ jessie varnish-4.1" \
-    |tee -a /etc/apt/sources.list.d/varnish-cache.list
-  - apt-get update
+    |sudo tee -a /etc/apt/sources.list.d/varnish-cache.list
+  - sudo apt-get update
   - apt-cache policy varnish
-  - apt-get install varnish
+  - sudo apt-get install varnish
   - varnishd -C -f openstreetmap/openstreetmap4.vcl
