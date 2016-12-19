@@ -1,6 +1,6 @@
-sudo: true
+sudo: required
 
-language: ruby
+language: php
 
 install:
   - apt-get update
